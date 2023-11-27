@@ -4,6 +4,7 @@
     --white: #FFFFFF;
     --orange: #ff5c00;
     --yellow-orange: #FFAB08;
+    --dark: #000000CC;
     --transition: 300ms linear;
 }
 
@@ -207,10 +208,7 @@ ul {
 
     cursor: pointer;
 
-    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1),
-        background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
-        border-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
-        box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    transition: var(--transition);
 }
 
 .primary-button:hover,
@@ -272,10 +270,7 @@ ul {
 
     width: 32px;
 
-    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1),
-        background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
-        border-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
-        box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    transition: var(--transition);
 }
 
 .card-button:hover,
@@ -342,15 +337,13 @@ ul {
 
     cursor: pointer;
 
-    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1),
-        background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
-        border-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
-        box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    transition: var(--transition);
 }
 
 .secondary-button:hover,
 .secondary-button:focus {
     background-color: var(--yellow-orange);
+    color: var(--white);
     transform: scale(1.1);
 }
 
@@ -389,14 +382,12 @@ ul {
 
         cursor: pointer;
 
-        transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1),
-        background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
-        border-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
-        box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
+        transition: var(--transition);
     }
     .secondary-tablet-button:hover,
     .secondary-tablet-button:focus {
         background-color: var(--yellow-orange);
+        color: var(--white);
     }
 }
 
@@ -417,12 +408,18 @@ ul {
     }
     .basket-card {
         width: 300px;
+        height: 467px;
 
         padding: 24px 16px;
-        margin-top: 50px;
+        margin-top: 74px;
 
         border-radius: 18px;
         background: #FFF;
+        border-radius: 12px;
+
+        border-radius: 12px;
+
+        box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.16);
     }
     .basket-item {
         display: flex;
@@ -489,15 +486,13 @@ ul {
         border-radius: 12px;
         border: none;
 
-        transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1),
-        background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
-        border-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
-        box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
+        transition: var(--transition);
     }
 
     .button-submit:hover,
     .button-submit:focus {
         background-color: var(--orange);
+        color: var(--white);
     }
 
     .main-desctop-title {
@@ -536,15 +531,14 @@ ul {
     
         padding: 11px 92px;
         margin: 0 auto;
+
+        transition: var(--transition);
     }
     
     .secondary-desctop-button:hover,
     .secondary-desctop-button:focus {
         background-color: var(--yellow-orange);
-        transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1),
-        background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
-        border-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
-        box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
+        color: var(--white);
     }
 }
 
@@ -622,4 +616,125 @@ ul {
         align-items: center;
         justify-content: space-between;
     }
+}
+
+/* Modal Window */
+
+.backdrop {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 100%;
+
+    transition: opacity var(--transition), visibility var(--transition);
+    background-color: var(--dark);         
+}
+
+.modal-window {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    width: 342px;
+    min-height: 423px;
+
+    padding: 24px;
+
+    background-color: var(--white);
+    border-radius: 24px;
+    box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.10);
+}
+
+.modal-button {
+    position: absolute;
+    top: 24px;
+    right: 24px;
+
+    height: 30px;
+
+    border: none;
+    border-radius: 50%;
+    background-color: transparent;
+
+    transition: var(--transition);
+
+    cursor: pointer;
+
+}
+
+.modal-button:hover,
+.modal-button:active {
+    background-color: var(--orange);
+}
+
+.modal-title {
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 1; 
+
+    margin-top: 20px;
+    margin-bottom: 16px;
+}
+
+.modal-wrapper {
+    display: flex;
+    gap: 8px;
+}
+
+.input-container {
+    padding-right: 19px;
+}
+
+.modal-input {
+    width: 100%;
+
+    padding: 12px 0 12px 12px;
+    margin-bottom: 8px;
+
+    border-radius: 12px;
+    border: 3px solid #F2F2F3;
+    background: #FFF;
+}
+
+.last {
+    margin-bottom: 0;
+}
+
+.radio-block {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+
+    margin: 16px 0;
+}
+
+.modal-radio {
+    margin-right: 8px;
+}
+
+.order-button {
+    width: 100%;
+    min-height: 40px;
+
+    margin-top: 32px;
+    padding: 11px 32px;
+
+    border-radius: 12px;
+    border: none;
+
+    transition: var(--transition);
+}
+
+.order-button:hover,
+.order-button:focus {
+    background-color: var(--orange);
+    color: var(--white);
+}
+
+.is-hidden {
+    visibility: hidden;
+    opacity: 0;
+    pointer-events: none;
 }

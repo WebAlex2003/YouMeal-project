@@ -196,7 +196,7 @@
                         <p class="card-sec-title">Итого</p>
                         <p class="card-sec-title">1279₴</p>
                     </div>
-                    <button class="button-submit">Оформить заказ</button>
+                    <button class="button-submit" data-modal-open>Оформить заказ</button>
                 </div>
                 <div class="products-desctop-wrap">
                     <h2 class="main-desctop-title">Бургеры</h2>
@@ -272,5 +272,29 @@
             </div>
         </section>
     </footer> 
-</body>
+    <!-- Modal window -->
+    <div class="backdrop is-hidden" data-modal>
+       <div class="modal-window">
+          <button class="modal-button"><img src="./images/icons/svg-icons/close.svg" alt="" width="20" height="20" data-modal-close></button>
+            <h2 class="modal-title">Доставка</h2>
+            <form action="" class="modal-form">
+                    <div class="input-container">
+                        <input type="text" name="name" class="modal-input" required placeholder="Ваше имя">
+                        <input type="tel" name="phone" class="modal-input" required placeholder="Телефон">
+                        <div class="radio-block">
+                            <label for="pickup"><input id="pickup" type="radio" name="format" class="modal-radio" >Самовывоз</label>
+                            <label for="delivery"><input id="delivery" type="radio" name="format" class="modal-radio" >Доставка</label>
+                        </div>
+                        <input type="text" class="modal-input" required placeholder="Улица, дом, квартира">
+                    </div class="input-container">
+                <div class="modal-wrapper">
+                    <input type="text" class="modal-input last" required placeholder="Этаж">
+                    <input type="text" class="modal-input last" required placeholder="Домофон">
+                </div>
+            </form>
+            <button class="order-button">Оформить</button>
+        </div>
+    </div>
+    <script src="./modal.js"></script>
+  </body>
 </html>
